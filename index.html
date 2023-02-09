@@ -5,48 +5,47 @@
             <title>Bay Area Map</title>
         <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
         <link href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
-        <style>
-            body { margin: 0; padding: 0; }
-            #map { position: absolute; top: 0; bottom: 0; width: 100%; }
-        </style>
     </head>
     <body>
-        <div id="map" style="width: 70%; height: 100%; float: left;"></div>
-        <div style="width: 30%; height: 100%; float: right;">
-            <button id="switch-day">Day</button>
-            <button id="switch-night">Night</button>
+        <div class="container">
+            <div id="map" class="map-container"></div>
+            <h1 id="map-title">Bay Area Viz</h1>
+            <div class="map-style-btn">
+                <button id="switch-day" class="map-style-btn-day">Day</button>
+                <button id="switch-night" class="map-style-btn-night">Night</button>
+            </div>
         </div>
-        <div id="title" style="position: absolute; top: 20px; left: 20px; font-size: 40px; font-weight: bold;">
-            Bay Area
-        </div>        
-        <script>
-            // TO MAKE THE MAP APPEAR YOU MUST ADD YOUR ACCESS TOKEN FROM https://account.mapbox.com
-            mapboxgl.accessToken = 'pk.eyJ1IjoiY3lhbmppbmVyIiwiYSI6ImNsZHhvMjBpMTBqNWwzb251MmZ2Y3IxdHEifQ.-slkdGumRWgesNzSsFyZ7Q';
-            var map = new mapboxgl.Map({
-                container: 'map', // container ID
-                // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        <script src="map.js">
+            // // TO MAKE THE MAP APPEAR YOU MUST ADD YOUR ACCESS TOKEN FROM https://account.mapbox.com
+            // mapboxgl.accessToken = 'pk.eyJ1IjoiY3lhbmppbmVyIiwiYSI6ImNsZHhvMjBpMTBqNWwzb251MmZ2Y3IxdHEifQ.-slkdGumRWgesNzSsFyZ7Q';
+            // var map = new mapboxgl.Map({
+            //     container: 'map', // container ID
+            //     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
 
-                style: 'mapbox://styles/mapbox/light-v10', // style URL --> More styles see: https://www.mapbox.com/gallery
-                center: [-122.2913, 37.6], // starting position [lng, lat] --> this is palo alto
+            //     style: 'mapbox://styles/mapbox/light-v10', // style URL --> More styles see: https://www.mapbox.com/gallery
+            //     center: [-122.2913, 37.6], // starting position [lng, lat] --> this is palo alto
 
-                zoom: 9.5, // starting zoom
+            //     zoom: 9.5, // starting zoom
 
-                // restrict the zoom in level to just Cali
-                maxZoom: 10, 
-                minZoom: 6 
-            });
-            var style = 'mapbox://styles/mapbox/light-v10';
+            //     // restrict the zoom in level to just Cali
+            //     maxZoom: 10, 
+            //     minZoom: 6 
+            // });
+            // var style = 'mapbox://styles/mapbox/light-v10';
 
-            document.getElementById('switch-day').addEventListener('click', function () {
-                style = 'mapbox://styles/mapbox/light-v10';
-                map.setStyle(style);
-            });
+            // document.getElementById('switch-day').addEventListener('click', function () {
+            //     style = 'mapbox://styles/mapbox/light-v10';
+            //     map.setStyle(style);
+            //     document.getElementById('title').style.color = 'black';
+            // });
 
-            document.getElementById('switch-night').addEventListener('click', function () {
-                style = 'mapbox://styles/mapbox/dark-v10';
-                map.setStyle(style);
-            });
+            // document.getElementById('switch-night').addEventListener('click', function () {
+            //     style = 'mapbox://styles/mapbox/dark-v10';
+            //     map.setStyle(style);
+            //     document.getElementById('title').style.color = 'grey';
+            // });
         </script>
         
     </body>
