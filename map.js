@@ -6,7 +6,7 @@ var map = new mapboxgl.Map({
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
 
     style: 'mapbox://styles/mapbox/light-v10', // style URL --> More styles see: https://www.mapbox.com/gallery
-    center: [-122.2913, 37.6], // starting position [lng, lat] --> this is palo alto
+    center: [-122.15, 37.6], // starting position [lng, lat] --> this is palo alto
 
     zoom: 9.5, // starting zoom
 
